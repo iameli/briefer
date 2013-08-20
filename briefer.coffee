@@ -2,8 +2,10 @@ do ($ = jQuery) ->
   #Configuration here
   discourse_url = 'https://discourse.victorybriefs.com'
   category_name = 'promoted'
+  location = '#BrieferOuter'
   
   #Don't touch under here
+  @Briefer = {}
   formatErrorMessage = (jqXHR, exception) ->
     if jqXHR.status == 0
       return 'Not connected.\nPlease verify your network connection.'
@@ -24,10 +26,15 @@ do ($ = jQuery) ->
   
   $.get(category_url)
     .done (data) ->
-      console.log data
+      Briefer.data = data
+      Briefer.output()
     .fail (xhr, err) ->
-      console.log formatErrorMessage xhr, err
-    
+      errorString = formatErrorMessage xhr, err
+      $(location).html(errorString)
+      
+  Briefer.output = () ->
+    str = Handlebars.templates.index(Briefer.data)
+    $(location).html(str)
     
  #   function formatErrorMessage(jqXHR, exception) {
 
