@@ -1,5 +1,6 @@
 {
   "name": "briefer",
+  "version": "0.0.2",
   "description": "blog integration for discourse posts",
   "repository": {
     "type": "git",
