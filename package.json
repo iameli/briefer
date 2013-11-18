@@ -1,8 +1,11 @@
 {
-    "name": "briefer",
-    "description": "blog integration for discourse posts",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/iameli/briefer.git"
-    }
+  "name": "briefer",
+  "description": "blog integration for discourse posts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iameli/briefer.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  }
 }
